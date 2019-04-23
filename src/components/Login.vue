@@ -29,34 +29,30 @@
 <script>
 export default {
   methods: {
-    reset(){
-     this.$refs.loginFormRef.resetFields()
+    reset() {
+      this.$refs.loginFormRef.resetFields()
     },
-    login(){
-      this.$refs.loginFormRef.validate(async valid =>{
-        if(valid === true){
-          const {data:dt}=await this.$http.post('/login',this.loginForm)
+    login() {
+      this.$refs.loginFormRef.validate(async valid => {
+        if (valid === true) {
+          const { data: dt } = await this.$http.post('/login', this.loginForm)
           // console.log(dt)
-          if(dt.meta.status!==200){
-           return this.$message.error(dt.meta.msg)
+          if (dt.meta.status !== 200) {
+            return this.$message.error(dt.meta.msg)
           }
-          window.sessionStorage.setItem('token',dt.data.token)
+          window.sessionStorage.setItem('token', dt.data.token)
           this.$router.push('/home')
         }
       })
     }
   },
-  
+
   data() {
     return {
-     loginFormRules:{
-     username:[
-       {required:true,message:'用户名必填',trigger:'blur'}
-     ],
-     password:[
-       {required:true,message:'密码必填项',trigger:'blur'}
-       ]
-     },
+      loginFormRules: {
+        username: [{ required: true, message: '用户名必填', trigger: 'blur' }],
+        password: [{ required: true, message: '密码必填项', trigger: 'blur' }]
+      },
       loginForm: {
         username: '',
         password: ''
@@ -98,12 +94,13 @@ export default {
         background-color: #eee;
       }
     }
-    .el-form{
+    .el-form {
       position: absolute;
       bottom: 0;
       width: 100%;
       padding: 20px;
       box-sizing: border-box;
+      
     }
   }
 }

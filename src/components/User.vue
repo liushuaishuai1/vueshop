@@ -1,10 +1,6 @@
 <template>
   <div>
-    <el-breadcrumb separator-class="el-icon-arrow-right">
-      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>用户管理</el-breadcrumb-item>
-      <el-breadcrumb-item>用户列表</el-breadcrumb-item>
-    </el-breadcrumb>
+  <com-crumb nm='用户'/>
     <!--卡片区-->
     <el-card class="box-card">
        <el-dialog title="修改用户" :visible.sync="editUserDialog" width="50%"  @close="$refs.editUserRef.resetFields()">

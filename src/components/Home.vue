@@ -33,14 +33,14 @@
               v-for="item2 in item.children"
               :key="item2.id"
             >
-            <i class="el-icon-menu"></i>
-            <span>{{item2.authName}}</span>
-           </el-menu-item>
-        </el-submenu>
-      </el-menu>
-     </el-aside>
+              <i class="el-icon-menu"></i>
+              <span>{{item2.authName}}</span>
+            </el-menu-item>
+          </el-submenu>
+        </el-menu>
+      </el-aside>
       <el-main>
-        <router-view />
+        <router-view/>
       </el-main>
     </el-container>
   </el-container>
@@ -48,23 +48,22 @@
 
 <script>
 export default {
-
-     created() {
+  created() {
     this.getMenuList()
   },
   methods: {
     logout() {
-    this.$confirm('确认要退出系统么？', '退出', {
-      confirmButtonText: '确定',
-      cancelButtonText: '取消',
-      type: 'warning'
-    })
-      .then(() => {
-        window.sessionStorage.removeItem('token')
-        this.$router.push('/login')
+      this.$confirm('确认要退出系统么？', '退出', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
       })
-      .catch(() => {})
-  },
+        .then(() => {
+          window.sessionStorage.removeItem('token')
+          this.$router.push('/login')
+        })
+        .catch(() => {})
+    },
     async getMenuList() {
       const { data: dt } = await this.$http.get('menus')
       console.log(dt)

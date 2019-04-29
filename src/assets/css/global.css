@@ -2,7 +2,8 @@ html,body,#app{
     height:100%;
     margin:0;
     padding:0;
-  }
+    min-width: 1024px;
+      }
   .el-submenu_title,
   .el-menu-item{
     font-size: 13px;
@@ -12,7 +13,7 @@ html,body,#app{
   }
   .box-card{
     margin-top:15px;
-  box-shadow: 0 1px 1px rgba(0 , 0, 0, 0.15);
+  box-shadow: 0 1px 1px rgba(0 , 0, 0, 0.15) !important;
   }
   .el-table,.el-pagination{
     margin-top:15px;

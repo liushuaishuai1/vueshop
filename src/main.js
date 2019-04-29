@@ -10,7 +10,7 @@ import axios from 'axios'
 import ComCrumb from './components/share/Crumb.vue'
 import ElementUI from 'element-ui'
 Vue.use(ElementUI)
-Vue.component('com-crumb',ComCrumb)
+Vue.component('com-crumb', ComCrumb)
 axios.defaults.baseURL = 'http://127.0.0.1:11333/api/private/v1/'
 axios.interceptors.request.use(
   function(config) {

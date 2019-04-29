@@ -1,6 +1,6 @@
 <template>
   <div>
-    <com-crumb nm ='权限' />
+    <com-crumb nm="权限"/>
 
     <el-card class="box-card">
       <el-table :data="rightsList" border stripe style="width: 100%">
@@ -21,23 +21,23 @@
 
 <script>
 export default {
-    created() {
-        this.getRightsList()
-    },
-    methods: {
-        async getRightsList(){
-            const {data:dt}= await this.$http.get('rights/list')
-            if(dt.meta.status!==200){
-            return this.$message.error(dt.meta.msg)
-            }
-            this.rightsList=dt.data
-        }
-    },
-    data() {
-        return {
-            rightsList:[]
-        }
-    },
+  created() {
+    this.getRightsList()
+  },
+  methods: {
+    async getRightsList() {
+      const { data: dt } = await this.$http.get('rights/list')
+      if (dt.meta.status !== 200) {
+        return this.$message.error(dt.meta.msg)
+      }
+      this.rightsList = dt.data
+    }
+  },
+  data() {
+    return {
+      rightsList: []
+    }
+  }
 }
 </script>
 

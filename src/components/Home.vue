@@ -17,19 +17,21 @@
           :unique-opened="true"
           :collapse="isshow"
           :collapse-transition="false"
+          :router="true"
         >
           <el-submenu
             :index="item.id+''"
             :style="{width:isshow?'65px':'200px'}"
             v-for="(item,k) in menuList"
             :key="item.id"
+            
           >
             <template slot="title">
               <i :class="'iconfont icon-'+iconList[k]"></i>
               <span>{{item.authName}}</span>
             </template>
             <el-menu-item
-              :index="item.id+'-'+item2.id"
+              :index="item2.path"
               v-for="item2 in item.children"
               :key="item2.id"
             >

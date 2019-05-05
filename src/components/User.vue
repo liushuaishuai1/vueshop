@@ -136,7 +136,7 @@
       <el-pagination
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
-        :current-page="currentPage4"
+        :current-page="querycdt.pagenum"
         :page-sizes="[3, 5, 10, 20]"
         :page-size="querycdt.pagesize"
         layout="total, sizes, prev, pager, next, jumper"
@@ -280,7 +280,7 @@ export default {
         rid: 0
       },
       editUserDialog: false,
-      editUserRef: {
+      editUserRules: {
         mobile: [
           { required: true, message: '手机号必填', trigger: 'blur' },
           { validator: chekMobile, trigger: 'blur' }

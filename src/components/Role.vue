@@ -11,7 +11,7 @@
             :default-expand-all="true"
             show-checkbox
             node-key="id"
-            :default-checked-keys="deFaultChecked"
+            :default-checked-keys="defaultChecked"
             ref="treeRef"
           ></el-tree>
         </el-form-item>

@@ -10,6 +10,9 @@ import Cat from '@/components/Cat'
 import Param from '@/components/Param'
 import Goods from '@/components/Goods'
 import GoodsAdd from '@/components/Goodsapp'
+import VueQuillEditor from 'vue-quill-editor'
+import Orders from '@/components/Orders'
+
 
 Vue.use(Router)
 const router = new Router({
@@ -28,7 +31,8 @@ const router = new Router({
         { path: '/categories', component: Cat },
         { path: '/params', component: Param },
         { path: '/goods', component: Goods },
-        { path: '/goodsadd', component: GoodsAdd }
+        { path: '/goodsadd', component: GoodsAdd },
+        { path: '/orders', component: Orders}
       ]
     }
   ]

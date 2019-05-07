@@ -251,6 +251,7 @@ export default {
       const { data: dt } = await this.$http.get('users', {
         params: this.querycdt
       })
+      // console.log(dt)
       if (dt.meta.status != 200) {
         return this.$message.error(dt.meta.msg)
       }

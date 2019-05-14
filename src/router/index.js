@@ -1,21 +1,22 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import Login from '@/components/Login'
-import Home from '@/components/Home'
-import Welcome from '@/components/Welcome'
-import User from '@/components/User'
-import Rights from '@/components/Rights'
-import Role from '@/components/Role'
-import Cat from '@/components/Cat'
-import Param from '@/components/Param'
-import Goods from '@/components/Goods'
-import GoodsAdd from '@/components/Goodsapp'
-import VueQuillEditor from 'vue-quill-editor'
-import Orders from '@/components/Orders'
+import VueRouter from 'vue-router'
+const Login =()=>import('@/components/Login') 
+const Home =()=>import('@/components/Home') 
+const Welcome =()=> import('@/components/Welcome') 
+const User =()=>import('@/components/User') 
+const Rights =()=>import('@/components/Rights')
+const Role =()=>import('@/components/Role') 
+const Cat =()=>import('@/components/Cat') 
+const Param=()=> import('@/components/Param') 
+const Goods =()=>import('@/components/Goods') 
+const GoodsAdd =()=>import( '@/components/Goodsapp')
+const VueQuillEditor=()=> import('vue-quill-editor') 
+const Orders=()=> import('@/components/Orders') 
+const Reports=()=> import( '@/components/Reports')
 
 
-Vue.use(Router)
-const router = new Router({
+Vue.use(VueRouter)
+const router = new VueRouter({
   routes: [
     { path: '/', redirect: '/home' },
     { path: '/login', component: Login },
@@ -32,7 +33,8 @@ const router = new Router({
         { path: '/params', component: Param },
         { path: '/goods', component: Goods },
         { path: '/goodsadd', component: GoodsAdd },
-        { path: '/orders', component: Orders}
+        { path: '/orders', component: Orders},
+        { path: '/reports', component: Reports}
       ]
     }
   ]

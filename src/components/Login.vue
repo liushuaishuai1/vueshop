@@ -1,5 +1,5 @@
 <template>
-  <div id="login-container">
+  <div  id="login-container">
     <div id="login-box">
       <div id="logo-box">
         <img src="../assets/img/logo.png" alt>
@@ -31,6 +31,7 @@ export default {
   methods: {
     reset() {
       this.$refs.loginFormRef.resetFields()
+      
     },
     login() {
       this.$refs.loginFormRef.validate(async valid => {
@@ -42,6 +43,7 @@ export default {
           }
           window.sessionStorage.setItem('token', dt.data.token)
           this.$router.push('/home')
+           
         }
       })
     }
@@ -55,8 +57,8 @@ export default {
       },
       loginForm: {
         username: '',
-        password: ''
-      }
+        password: '' ,
+      },
     }
   }
 }
